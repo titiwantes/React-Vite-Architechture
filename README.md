@@ -19,6 +19,7 @@ React-Vite-Architecture is a foundational project for building scalable web appl
 
 ## Folder Structure
 
+```bash
 src
 ├── assets # Static assets like images and logos
 ├── components # Reusable UI components (buttons, cards, etc.)
@@ -26,6 +27,7 @@ src
 ├── layouts # Layout components for wrapping page content
 ├── pages # Different pages of the app (Home, Dashboard, etc.)
 ├── main.tsx # App entry point$
+```
 
 ## Usage
 
