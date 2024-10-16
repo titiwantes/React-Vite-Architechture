@@ -2,11 +2,10 @@
 
 React-Vite-Architecture is a foundational project for building scalable web applications using **Vite**, **React**, **TailwindCSS**, and **ShadCN UI components**. The current setup is a dashboard, but it's easily reusable and adaptable for other types of applications.
 
-![App statistiques](./src/assets/app_stats.png)
-<img src="./src/assets/app_stats.png" alt="Screenshot" width="500" />
-<img src="./src/assets/app_phone.png" alt="Screenshot" height="500" />
-
-![App mobile](./src/assets/app_phone.png)
+<p align="center">
+  <img src="./src/assets/app_stats.png" alt="Screenshot" width="500" />
+  <img src="./src/assets/app_phone.png" alt="Screenshot" height="500" />
+</p>
 
 ## Features
 
