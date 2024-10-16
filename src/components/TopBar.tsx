@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   DropdownMenu,
@@ -12,20 +12,14 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Menu, LogOut, Sun, Moon, User } from "lucide-react";
 import Sidebar from "./SideBar";
+import { AppContext } from "@/contexts/AppContext";
+import { Smile } from "lucide-react";
 
 export default function TopBar() {
   const location = useLocation();
+  const appContext = useContext(AppContext);
   const pathname = location.pathname;
   const [open, setOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-    }
-  }, [isDarkMode]);
 
   return (
     <>
@@ -43,7 +37,8 @@ export default function TopBar() {
                 <Sidebar pathname={pathname} setOpen={setOpen} />
               </SheetContent>
             </Sheet>
-            <Link to="/" className="font-bold ml-2">
+            <Link to="/" className="font-bold ml-2 flex">
+              <Smile className="h-6 w-6 mr-2" />
               MonApp
             </Link>
           </div>
@@ -61,13 +56,19 @@ export default function TopBar() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem onClick={() => setIsDarkMode(!isDarkMode)}>
-                  {isDarkMode ? (
+                <DropdownMenuItem
+                  onClick={() =>
+                    appContext?.setTheme(
+                      appContext.theme === "dark" ? "light" : "dark"
+                    )
+                  }
+                >
+                  {appContext?.theme == "dark" ? (
                     <Sun className="mr-2 h-4 w-4" />
                   ) : (
                     <Moon className="mr-2 h-4 w-4" />
                   )}
-                  {isDarkMode ? "Mode clair" : "Mode sombre"}
+                  {appContext?.theme ? "Mode clair" : "Mode sombre"}
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <LogOut className="mr-2 h-4 w-4" />

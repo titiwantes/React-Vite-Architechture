@@ -6,9 +6,11 @@ import "./index.css";
 import Statistiques from "./pages/Statistiques.tsx";
 import Settings from "./pages/Settings.tsx";
 import Users from "./pages/Users.tsx";
+import { AppContextProvider } from "./contexts/AppContext.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+  <AppContextProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -17,5 +19,6 @@ createRoot(document.getElementById("root")!).render(
         <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
+    </AppContextProvider>
   </StrictMode>
 );
