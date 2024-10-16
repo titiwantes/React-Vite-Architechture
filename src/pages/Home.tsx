@@ -15,7 +15,7 @@ export default function Home() {
     <AppLayout>
       <div className="p-6 space-y-6 md:p-10">
         <h1 className="text-3xl font-bold tracking-tight">
-          Bienvenue sur le tableau de bord
+          Bienvenue
         </h1>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <Card className="hover:shadow-lg transition-shadow duration-200">
